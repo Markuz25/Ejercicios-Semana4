@@ -4,7 +4,7 @@ const listItems = []
 async function Datos() {
   
     const res = await fetch(`https://jsonplaceholder.typicode.com/users/`)
-    const { results } = await res.json()
+    const results = await res.json()
      result.innerHTML = ''
   
     results.forEach(user => {
