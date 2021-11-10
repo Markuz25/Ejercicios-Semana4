@@ -4,22 +4,26 @@ const listItems = [];
 
 async function Datos() {
 
-  const res = await fetch(URL_API);
-  const results = await res.json();
-  result.innerHTML = '';
+  try{
+    const results = await (await fetch(URL_API)).json();
+    result.innerHTML = '';
 
-  results.forEach(user => {
-    const li = document.createElement('li');
+    results.forEach(user => {
+      const li = document.createElement('li');
 
-    li.innerHTML = `
+      li.innerHTML = `
           <div class="user-info">
             <h4>${user.name} ${user.username}</h4>
             <p>${user.email}</p>
             <p>${user.phone}</p>
           </div>
         `
-    listItems.push(li);
-    result.appendChild(li);
-  })
+      listItems.push(li);
+      result.appendChild(li);
+    })
+  }catch(error){
+    console.error("Error: " + error);
+  }
+  
 }
 Datos();
