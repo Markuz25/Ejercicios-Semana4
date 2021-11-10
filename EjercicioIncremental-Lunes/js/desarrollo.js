@@ -17,12 +17,12 @@ async function Datos() {
             <p>${user.email}</p>
             <p>${user.phone}</p>
           </div>
-        `
+        `;
       listItems.push(li);
       result.appendChild(li);
     })
   }catch(error){
-    console.error("Error: " + error);
+    console.error("Error: " , error);
   }
   
 }
