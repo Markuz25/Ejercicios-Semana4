@@ -1,9 +1,10 @@
+const URL_API = `https://jsonplaceholder.typicode.com/users/`;
 const result = document.getElementById('resultado')
 const listItems = []
 
 async function Datos() {
   
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users/`)
+    const res = await fetch(URL_API)
     const results = await res.json()
      result.innerHTML = ''
   
