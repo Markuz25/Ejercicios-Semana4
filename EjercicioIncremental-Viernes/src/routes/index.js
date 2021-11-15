@@ -7,6 +7,14 @@ router.get('/', (req, res) => {
     res.render('index', datos); //Reenderiza el archivo
 });
 
+router.get('/about',(req, res)=>{
+    res.write(`
+        <div>
+            <img src="${coolImages.one()}">
+        </div>
+            `)
+})
+
 //No se ocupa por el momento
 router.get('/perfil', (req, res) => {
     res.render('perfil');
@@ -21,6 +29,7 @@ console.log("LA HORA LOCAL ES: ", local.format('DD-MM-YYYY hh:mm:ss A'))
 
 let duration = moment(utc.diff(local));
 let texto='';
+
 
 console.log('Horas de diferencia:  ' + duration.hours());
 

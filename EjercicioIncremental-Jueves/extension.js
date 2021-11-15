@@ -10,14 +10,16 @@ const server = http.createServer((req, res) => {
     res.write(`<h1>Listado de cursos</h1>`); 
     arrayCursos.forEach((element,index) => {
         res.write(`<li>${index}:${element}</li>`);
-    })
+    });
     res.end();
 });
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
+    arrayCursos.forEach((element, index) => {
+        console.log(`${index}:${element}`);
+    });
 });
-
 
 
 
